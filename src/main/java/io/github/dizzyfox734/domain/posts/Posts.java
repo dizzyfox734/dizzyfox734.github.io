@@ -1,5 +1,7 @@
 package io.github.dizzyfox734.domain.posts;
 
+import io.github.dizzyfox734.domain.BaseTimeEntity;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,13 +9,10 @@ public class Posts extends BaseTimeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(length = 500, nullable = false)
     private String title;
-
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
-
     private String author;
 
     private Posts(Builder builder) {
@@ -28,7 +27,7 @@ public class Posts extends BaseTimeEntity{
         private String content;
         private String author;
 
-        // nullable field
+        // Not nullable field
         public Builder(String title, String content) {
             this.title = title;
             this.content = content;
@@ -44,11 +43,16 @@ public class Posts extends BaseTimeEntity{
         }
     }
 
+    public Posts() {
+        super();
+    }
+
+    public Long getId() { return id; }
     public String getTitle() {
         return title;
     }
-
     public String getContent() {
         return content;
     }
+    public String getAuthor() { return author; }
 }

@@ -15,12 +15,12 @@ public class Posts extends BaseTimeEntity{
     private String content;
     private String author;
 
-    private Posts(Builder builder) {
-        this.title = builder.title;
-        this.content = builder.content;
-        this.author = builder.author;
+    // @NoArgsConstructor
+    public Posts() {
+        super();
     }
 
+    // @Builder
     public static class Builder {
         private Long id;
         private String title;
@@ -42,11 +42,13 @@ public class Posts extends BaseTimeEntity{
             return new Posts(this);
         }
     }
-
-    public Posts() {
-        super();
+    private Posts(Builder builder) {
+        this.title = builder.title;
+        this.content = builder.content;
+        this.author = builder.author;
     }
 
+    // @getter
     public Long getId() { return id; }
     public String getTitle() {
         return title;
@@ -55,4 +57,9 @@ public class Posts extends BaseTimeEntity{
         return content;
     }
     public String getAuthor() { return author; }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
 }

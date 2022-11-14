@@ -1,5 +1,4 @@
-package io.github.dizzyfox734.web.dto;
-
+package io.github.dizzyfox734.springboot.web.dto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

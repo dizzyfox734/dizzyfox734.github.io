@@ -1,4 +1,4 @@
-package io.github.dizzyfox734.web.dto;
+package io.github.dizzyfox734.springboot.web.dto;
 
 public class PostsUpdateRequestDto {
     private String title;

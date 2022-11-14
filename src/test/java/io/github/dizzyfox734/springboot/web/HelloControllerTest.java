@@ -1,23 +1,27 @@
-package io.github.dizzyfox734.web;
+package io.github.dizzyfox734.springboot.web;
 
+import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.hamcrest.Matchers.is;
 
-import org.junit.jupiter.api.Test;
+import io.github.dizzyfox734.springboot.service.web.HelloController;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-@WebMvcTest(HelloController.class)
+@RunWith(SpringRunner.class)
+@WebMvcTest(controllers = HelloController.class)
 public class HelloControllerTest {
     @Autowired
     private MockMvc mvc;
 
     @Test
-    void return_hello() throws Exception {
+    public void return_hello() throws Exception {
         // given
         String hello = "hello";
 
@@ -29,7 +33,7 @@ public class HelloControllerTest {
     }
 
     @Test
-    void return_helloDto() throws Exception {
+    public void return_helloDto() throws Exception {
         String name = "hello";
         int amount = 1000;
 

@@ -1,6 +1,6 @@
-package io.github.dizzyfox734.web;
+package io.github.dizzyfox734.springboot.web;
 
-import io.github.dizzyfox734.web.dto.HelloResponseDto;
+import io.github.dizzyfox734.springboot.web.dto.HelloResponseDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

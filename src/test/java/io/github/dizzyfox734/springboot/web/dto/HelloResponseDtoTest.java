@@ -1,8 +1,9 @@
-package io.github.dizzyfox734.web.dto;
+package io.github.dizzyfox734.springboot.web.dto;
 
-import org.junit.jupiter.api.Test;
+import io.github.dizzyfox734.springboot.service.web.dto.HelloResponseDto;
+import org.junit.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class HelloResponseDtoTest {
 

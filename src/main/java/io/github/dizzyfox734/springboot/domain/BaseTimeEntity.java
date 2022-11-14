@@ -1,4 +1,4 @@
-package io.github.dizzyfox734.domain;
+package io.github.dizzyfox734.springboot.domain;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -13,13 +13,13 @@ import java.time.LocalDateTime;
 public abstract class BaseTimeEntity {
 
     @CreatedDate
-    private LocalDateTime createDate;
+    private LocalDateTime createdDate;
 
     @LastModifiedDate
     private LocalDateTime modifiedDate;
 
-    public LocalDateTime getCreateDate() {
-        return createDate;
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
     }
 
     public LocalDateTime getModifiedDate() {

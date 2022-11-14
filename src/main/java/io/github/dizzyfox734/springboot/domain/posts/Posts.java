@@ -1,11 +1,11 @@
-package io.github.dizzyfox734.domain.posts;
+package io.github.dizzyfox734.springboot.domain.posts;
 
-import io.github.dizzyfox734.domain.BaseTimeEntity;
+import io.github.dizzyfox734.springboot.domain.BaseTimeEntity;
 
 import javax.persistence.*;
 
 @Entity
-public class Posts extends BaseTimeEntity{
+public class Posts extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,6 +1,6 @@
-package io.github.dizzyfox734.web.dto;
+package io.github.dizzyfox734.springboot.web.dto;
 
-import io.github.dizzyfox734.domain.posts.Posts;
+import io.github.dizzyfox734.springboot.domain.posts.Posts;
 
 public class PostsSaveRequestDto {
     private String title;

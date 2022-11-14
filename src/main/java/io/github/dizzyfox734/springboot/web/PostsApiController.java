@@ -1,9 +1,9 @@
-package io.github.dizzyfox734.web;
+package io.github.dizzyfox734.springboot.web;
 
-import io.github.dizzyfox734.service.PostsService;
-import io.github.dizzyfox734.web.dto.PostsResponseDto;
-import io.github.dizzyfox734.web.dto.PostsSaveRequestDto;
-import io.github.dizzyfox734.web.dto.PostsUpdateRequestDto;
+import io.github.dizzyfox734.springboot.service.PostsService;
+import io.github.dizzyfox734.springboot.web.dto.PostsUpdateRequestDto;
+import io.github.dizzyfox734.springboot.web.dto.PostsResponseDto;
+import io.github.dizzyfox734.springboot.web.dto.PostsSaveRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,6 @@
 package io.github.dizzyfox734.springboot.web.dto;
 
-import io.github.dizzyfox734.springboot.service.web.dto.HelloResponseDto;
+import io.github.dizzyfox734.springboot.web.dto.HelloResponseDto;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

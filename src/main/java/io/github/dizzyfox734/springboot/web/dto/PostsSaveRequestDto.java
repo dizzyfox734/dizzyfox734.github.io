@@ -31,7 +31,9 @@ public class PostsSaveRequestDto {
             return this;
         }
 
-        public PostsSaveRequestDto build() {return new PostsSaveRequestDto(this);}
+        public PostsSaveRequestDto build() {
+            return new PostsSaveRequestDto(this);
+        }
     }
     private PostsSaveRequestDto(Builder builder) {
         this.title = builder.title;

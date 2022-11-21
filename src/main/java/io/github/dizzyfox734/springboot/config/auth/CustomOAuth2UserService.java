@@ -1,6 +1,7 @@
 package io.github.dizzyfox734.springboot.config.auth;
 
 import io.github.dizzyfox734.springboot.config.auth.dto.OAuthAttributes;
+import io.github.dizzyfox734.springboot.config.auth.dto.SessionUser;
 import io.github.dizzyfox734.springboot.domain.user.User;
 import io.github.dizzyfox734.springboot.domain.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         String registrationId = userRequest.getClientRegistration().getRegistrationId();
         String userNameAttributeName = userRequest.getClientRegistration().getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
 
-        OAuthAttributes authAttributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
+        OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
         User user = saveOrUpdate(attributes);
         httpSession.setAttribute("user", new SessionUser(user));

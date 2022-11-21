@@ -1,5 +1,7 @@
 package io.github.dizzyfox734.springboot.web;
 
+import io.github.dizzyfox734.springboot.config.auth.LoginUser;
+import io.github.dizzyfox734.springboot.config.auth.dto.SessionUser;
 import io.github.dizzyfox734.springboot.service.PostsService;
 import io.github.dizzyfox734.springboot.web.dto.PostsResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class IndexController {
 
-    private final PostsService postsService;
+    private PostsService postsService;
 
     // @RequiredArgsConstructor
     @Autowired
@@ -20,8 +22,11 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
+        if(user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
     }
 

@@ -1,5 +1,8 @@
 package io.github.dizzyfox734.springboot.config.auth.dto;
 
+import io.github.dizzyfox734.springboot.domain.user.Role;
+import io.github.dizzyfox734.springboot.domain.user.User;
+
 import java.util.Map;
 
 public class OAuthAttributes {
@@ -66,5 +69,25 @@ public class OAuthAttributes {
         this.name = builder.name;
         this.email = builder.email;
         this.picture = builder.picture;
+    }
+
+    public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
+        return ofGoogle(userNameAttributeName, attributes);
+    }
+
+    private static OAuthAttributes ofGoogle(String userNameAttributeName, Map<String, Object> attributes) {
+        return new Builder()
+                .name((String) attributes.get("name"))
+                .email((String) attributes.get("email"))
+                .picture((String) attributes.get("picture"))
+                .attributes(attributes)
+                .nameAttributeKey(userNameAttributeName)
+                .build();
+    }
+
+    public User toEntity() {
+        return new User.Builder(name, email, Role.GUEST)
+                .picture(picture)
+                .build();
     }
 }

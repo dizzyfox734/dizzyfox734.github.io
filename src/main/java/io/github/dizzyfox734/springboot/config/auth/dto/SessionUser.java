@@ -25,5 +25,4 @@ public class SessionUser implements Serializable {
         this.email = user.getEmail();
         this.picture = user.getPicture();
     }
-
 }

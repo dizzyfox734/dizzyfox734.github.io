@@ -1,4 +1,4 @@
-package io.github.dizzyfox734.springboot.posts;
+package io.github.dizzyfox734.springboot.domain.posts;
 
 import io.github.dizzyfox734.springboot.domain.posts.Posts;
 import io.github.dizzyfox734.springboot.domain.posts.PostsRepository;
